@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import Filters from "@/components/Filters";
 import { ReactNode } from "react";
 import Footer from "@/components/Footer";
+import { FavoritesProvider } from "@/context/FavoritesContext";
+import { ProjectsProvider } from "@/context/ProjectsContext";
 
 export const metadata: Metadata = {
   title: "project-management",
@@ -16,19 +18,23 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fa" dir="rtl">
       <body className="font-sans min-h-[100vh]">
-        <ModalProvider>
-          <Header />
-          <Modal>
-            <Filters />
-          </Modal>
-          <div className="flex">
-            <aside className="hidden md:block min-w-52 border-l border-gray-100">
-              <Filters />
-            </aside>
-            <main className="bg-gray-50 w-full p-4">{children}</main>
-          </div>
-          <Footer />
-        </ModalProvider>
+        <ProjectsProvider>
+          <ModalProvider>
+            <FavoritesProvider>
+              <Header />
+              <Modal>
+                <Filters />
+              </Modal>
+              <div className="flex">
+                <aside className="hidden md:block min-w-52 border-l border-gray-100">
+                  <Filters />
+                </aside>
+                <main className="bg-gray-50 w-full p-4">{children}</main>
+              </div>
+              <Footer />
+            </FavoritesProvider>
+          </ModalProvider>
+        </ProjectsProvider>
       </body>
     </html>
   );

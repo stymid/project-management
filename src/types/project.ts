@@ -10,7 +10,7 @@ export interface Project {
   description: string;
   creator: string;
   duration: number;
-  endDate: string; // یا Date
+  endDate: string;
   price: number;
   status: ProjectStatus;
   createdAt: string;
