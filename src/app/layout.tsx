@@ -5,6 +5,7 @@ import Modal from "@/components/Modal";
 import Header from "@/components/Header";
 import Filters from "@/components/Filters";
 import { ReactNode } from "react";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "project-management",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="font-sans">
+      <body className="font-sans min-h-[100vh]">
         <ModalProvider>
           <Header />
           <Modal>
@@ -24,9 +25,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <aside className="hidden md:block min-w-52 border-l border-gray-100">
               <Filters />
             </aside>
-            <main>{children}</main>
+            <main className="bg-gray-50 w-full p-4">{children}</main>
           </div>
-          <footer className="bg-red-500">فوتر</footer>
+          <Footer />
         </ModalProvider>
       </body>
     </html>

@@ -1,3 +1,4 @@
+import ProjectCard from "@/components/ProjectCard";
 import { getProjects } from "@/lib/supabase/getProjects";
 
 export default async function HomePage() {
@@ -10,7 +11,7 @@ export default async function HomePage() {
       <ul>
         {projects.map((project) => (
           <li key={project.id}>
-            <p>{project.name}</p>
+            <ProjectCard project={project} />
           </li>
         ))}
       </ul>

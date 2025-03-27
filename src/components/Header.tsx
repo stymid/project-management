@@ -1,18 +1,19 @@
 "use client";
 import { useModal } from "@/context/ModalContext";
+import { Button } from "@headlessui/react";
 
 const Header: React.FC = () => {
   const { toggleModal } = useModal();
   return (
-    <header className="bg-blue-600 text-white p-4">
+    <header className="border-b border-gray-100  p-4">
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-bold">مدیریت پروژه</h1>
-        <button
+        <Button
           onClick={toggleModal}
-          className="bg-yellow-500 px-4 py-2 rounded-md md:hidden"
+          className="rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[active]:bg-sky-700 md:hidden"
         >
-          نمایش مودال
-        </button>
+          فیلتر
+        </Button>
       </div>
     </header>
   );

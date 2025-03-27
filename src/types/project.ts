@@ -10,8 +10,8 @@ export interface Project {
   description: string;
   creator: string;
   duration: number;
-  end_date: string; // یا Date
+  endDate: string; // یا Date
   price: number;
   status: ProjectStatus;
-  created_at: string;
+  createdAt: string;
 }
