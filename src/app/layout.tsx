@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ModalProvider } from "@/context/ModalContext";
-import Modal from "@/components/Modal";
 import Header from "@/components/Header";
-import Filters from "@/components/Filters";
 import { ReactNode } from "react";
 import Footer from "@/components/Footer";
 import { FavoritesProvider } from "@/context/FavoritesContext";
@@ -22,15 +20,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <ModalProvider>
             <FavoritesProvider>
               <Header />
-              <Modal>
-                <Filters />
-              </Modal>
-              <div className="flex">
-                <aside className="hidden md:block min-w-52 border-l border-gray-100">
-                  <Filters />
-                </aside>
-                <main className="bg-gray-50 w-full p-4">{children}</main>
-              </div>
+
+              <main className="bg-gray-50 w-full p-4">{children}</main>
+
               <Footer />
             </FavoritesProvider>
           </ModalProvider>

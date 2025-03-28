@@ -1,4 +1,3 @@
-"use client";
 import { Project } from "@/types/project";
 
 export type ProjectsContextType = {

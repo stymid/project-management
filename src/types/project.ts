@@ -5,12 +5,12 @@ export type ProjectStatus =
   | "approved";
 
 export interface Project {
-  id: string;
+  id: number;
   name: string;
   description: string;
   creator: string;
   duration: number;
-  endDate: string;
+  endـdate: string;
   price: number;
   status: ProjectStatus;
   createdAt: string;
