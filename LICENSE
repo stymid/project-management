@@ -1,6 +1,10 @@
 MIT License
 
+<<<<<<< HEAD
 Copyright (c) 2025 mahdi sabahi
+=======
+Copyright (c) 2023 Next UI
+>>>>>>> 41b4741 (feat: add custom header with desktop nav and mobile menu, social links and auth status)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
